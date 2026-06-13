@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Present Mam - Student Dashboard</title>
+
+    <link rel="stylesheet" href="../css/student-dashboard.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+    <div class="dashboard-container">
+
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+
+            <div class="sidebar-header">
+
+                <img src="../assets/images/logo.png" alt="Present Mam Logo" class="logo">
+
+                <h2>Present Mam</h2>
+
+            </div>
+
+            <nav class="sidebar-menu">
+
+                <a href="#" class="menu-item active">
+
+                    <i class="fa-solid fa-house"></i>
+
+                    <span>Dashboard</span>
+
+                </a>
+
+                <a href="#" class="menu-item">
+
+                    <i class="fa-solid fa-calendar-check"></i>
+
+                    <span>Attendance</span>
+
+                </a>
+
+                <a href="#" class="menu-item">
+
+                    <i class="fa-solid fa-book"></i>
+
+                    <span>Subjects</span>
+
+                </a>
+
+                <a href="#" class="menu-item">
+
+                    <i class="fa-solid fa-chart-line"></i>
+
+                    <span>Reports</span>
+
+                </a>
+
+                <a href="#" class="menu-item">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    <span>Profile</span>
+
+                </a>
+
+            </nav>
+
+            <div class="sidebar-footer">
+
+                <a href="#" class="menu-item logout">
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                    <span>Logout</span>
+
+                </a>
+
+            </div>
+
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <!-- Top Navigation -->
+            <header class="topbar">
+
+                <button class="menu-toggle" id="menuToggle">
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+                <div class="topbar-right">
+
+                    <button class="notification-btn">
+
+                        <i class="fa-solid fa-bell"></i>
+
+                    </button>
+
+                    <div class="profile-section">
+
+                        <!-- <img src="../assets/images/avatar.png"
+                            alt="Student Avatar"
+                            class="avatar"> -->
+
+                        <i class="fa-solid fa-circle-user"></i>
+
+                        <span>Virat</span>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+            <!-- Welcome Section -->
+            <section class="welcome-section">
+
+                <h1>Welcome back, Virat 👋</h1>
+
+                <p>
+                    Here's your attendance overview for today.
+                </p>
+
+            </section>
+
+            <!-- Student Information -->
+            <section class="student-info-section">
+
+                <div class="student-info-card">
+
+                    <div class="student-avatar">
+
+                        <i class="fa-solid fa-circle-user"></i>
+
+                    </div>
+
+                    <div class="student-details">
+
+                        <h2>Virat Kataria</h2>
+
+                        <p>
+
+                            <strong>Roll No:</strong> 22CSE001
+
+                        </p>
+
+                        <p>
+
+                            <strong>Branch:</strong> Computer Science Engineering
+
+                        </p>
+
+                        <p>
+
+                            <strong>Semester:</strong> 6
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- Statistics Cards -->
+            <section class="stats-grid">
+
+                <div class="stat-card">
+
+                    <h2>
+                        <span class="counter" data-target="85">
+                            0
+                        </span>%
+                    </h2>
+                    <p>Overall Attendance</p>
+                </div>
+
+                <div class="stat-card">
+
+                    <h2 class="counter" data-target="4">0</h2>
+
+                    <p>Today's Classes</p>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <h2 class="counter" data-target="34">0</h2>
+
+                    <p>Classes Attended</p>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <h2 class="counter" data-target="1">0</h2>
+
+                    <p>Attendance Alerts</p>
+
+                </div>
+
+            </section>
+
+            <!-- Subject Attendance -->
+            <section class="attendance-section">
+
+                <div class="section-header">
+
+                    <h2>Subject Attendance</h2>
+
+                </div>
+
+                <div class="subjects-grid">
+
+                    <!-- DBMS -->
+                    <div class="subject-card">
+
+                        <div class="subject-info">
+
+                            <h3>Database Management Systems</h3>
+
+                            <span>90%</span>
+
+                        </div>
+
+                        <div class="progress-bar">
+
+                            <div class="progress dbms"></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- OS -->
+                    <div class="subject-card">
+
+                        <div class="subject-info">
+
+                            <h3>Operating Systems</h3>
+
+                            <span>78%</span>
+
+                        </div>
+
+                        <div class="progress-bar">
+
+                            <div class="progress os"></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- CN -->
+                    <div class="subject-card">
+
+                        <div class="subject-info">
+
+                            <h3>Computer Networks</h3>
+
+                            <span>84%</span>
+
+                        </div>
+
+                        <div class="progress-bar">
+
+                            <div class="progress cn"></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Java -->
+                    <div class="subject-card">
+
+                        <div class="subject-info">
+
+                            <h3>Java Programming</h3>
+
+                            <span>88%</span>
+
+                        </div>
+
+                        <div class="progress-bar">
+
+                            <div class="progress java"></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="../js/student-dashboard.js"></script>
+
+</body>
+
+</html>

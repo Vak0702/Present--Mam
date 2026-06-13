@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Present Mam - Attendance</title>
+
+    <link rel="stylesheet" href="../css/attendance.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+    <div class="dashboard-container">
+
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+
+            <div class="sidebar-header">
+
+                <img src="../assets/images/logo.png"
+                    alt="Present Mam Logo"
+                    class="logo">
+
+                <h2>Present Mam</h2>
+
+            </div>
+
+            <nav class="sidebar-menu">
+
+                <a href="student-dashboard.html" class="menu-item">
+
+                    <i class="fa-solid fa-house"></i>
+
+                    <span>Dashboard</span>
+
+                </a>
+
+                <a href="#" class="menu-item active">
+
+                    <i class="fa-solid fa-calendar-check"></i>
+
+                    <span>Attendance</span>
+
+                </a>
+
+                <a href="#" class="menu-item">
+
+                    <i class="fa-solid fa-book"></i>
+
+                    <span>Subjects</span>
+
+                </a>
+
+                <a href="#" class="menu-item">
+
+                    <i class="fa-solid fa-chart-line"></i>
+
+                    <span>Reports</span>
+
+                </a>
+
+                <a href="#" class="menu-item">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    <span>Profile</span>
+
+                </a>
+
+            </nav>
+
+            <div class="sidebar-footer">
+
+                <a href="#" class="menu-item logout">
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                    <span>Logout</span>
+
+                </a>
+
+            </div>
+
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <!-- Top Navigation -->
+            <header class="topbar">
+
+                <button class="menu-toggle" id="menuToggle">
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+                <div class="topbar-right">
+
+                    <button class="notification-btn">
+
+                        <i class="fa-solid fa-bell"></i>
+
+                    </button>
+
+                    <div class="profile-section">
+
+                        <i class="fa-solid fa-circle-user"></i>
+
+                        <span>Virat</span>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+            <!-- Page Header -->
+            <section class="page-header">
+
+                <h1>Attendance Overview 📅</h1>
+
+                <p>
+                    Track your attendance across all subjects.
+                </p>
+
+            </section>
+
+            <!-- Overall Attendance Card -->
+            <section class="overall-attendance-card">
+
+                <h2>85%</h2>
+
+                <p>Overall Attendance</p>
+
+                <div class="progress-bar">
+
+                    <div class="progress overall-progress"></div>
+
+                </div>
+
+            </section>
+
+            <!-- Attendance Table -->
+            <section class="attendance-table-section">
+
+                <div class="section-header">
+
+                    <h2>Subject Attendance</h2>
+
+                </div>
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>Subject</th>
+
+                                <th>Total</th>
+
+                                <th>Present</th>
+
+                                <th>Absent</th>
+
+                                <th>Percentage</th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+
+                                <td>Database Management Systems</td>
+
+                                <td>50</td>
+
+                                <td>45</td>
+
+                                <td>5</td>
+
+                                <td>90%</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>Operating Systems</td>
+
+                                <td>40</td>
+
+                                <td>31</td>
+
+                                <td>9</td>
+
+                                <td>78%</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>Computer Networks</td>
+
+                                <td>45</td>
+
+                                <td>38</td>
+
+                                <td>7</td>
+
+                                <td>84%</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>Java Programming</td>
+
+                                <td>50</td>
+
+                                <td>44</td>
+
+                                <td>6</td>
+
+                                <td>88%</td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+            <!-- Attendance Alerts -->
+            <section class="alert-section">
+
+                <div class="alert-card">
+
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+
+                    <div>
+
+                        <h3>Attendance Alert</h3>
+
+                        <p>
+                            Your attendance in Operating Systems has fallen below 80%.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="../js/attendance.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Present Mam - Teacher Dashboard</title>
+
+    <link rel="stylesheet" href="../css/teacher-dashboard.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <a href="teacher-reports.html" class="menu-item"></a>
+
+</head>
+
+<body>
+
+    <div class="dashboard-container">
+
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+
+            <div class="sidebar-header">
+
+                <img src="../assets/images/logo.png" alt="Present Mam Logo" class="logo">
+
+                <h2>Present Mam</h2>
+
+            </div>
+
+            <nav class="sidebar-menu">
+
+                <a href="#" class="menu-item active">
+
+                    <i class="fa-solid fa-house"></i>
+
+                    <span>Dashboard</span>
+
+                </a>
+
+                <a href="#" class="menu-item">
+
+                    <i class="fa-solid fa-clipboard-check"></i>
+
+                    <span>Mark Attendance</span>
+
+                </a>
+
+                <a href="#" class="menu-item">
+
+                    <i class="fa-solid fa-book-open"></i>
+
+                    <span>Classes</span>
+
+                </a>
+
+                <a href="#" class="menu-item">
+
+                    <i class="fa-solid fa-chart-line"></i>
+
+                    <span>Reports</span>
+
+                </a>
+
+                <a href="#" class="menu-item">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    <span>Profile</span>
+
+                </a>
+
+            </nav>
+
+            <div class="sidebar-footer">
+
+                <a href="#" class="menu-item logout">
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                    <span>Logout</span>
+
+                </a>
+
+            </div>
+
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <!-- Top Navigation -->
+            <header class="topbar">
+
+                <button class="menu-toggle" id="menuToggle">
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+                <div class="topbar-right">
+
+                    <button class="notification-btn">
+
+                        <i class="fa-solid fa-bell"></i>
+
+                    </button>
+
+                    <div class="profile-section">
+
+                        <i class="fa-solid fa-circle-user"></i>
+
+                        <span>Dr. Sharma</span>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+            <!-- Welcome Section -->
+            <section class="welcome-section">
+
+                <h1>
+                    Welcome back, Dr. Sharma 👋
+                </h1>
+
+                <p>
+                    Here's an overview of today's teaching activities.
+                </p>
+
+            </section>
+
+            <!-- Statistics Cards -->
+            <section class="stats-grid">
+
+                <div class="stat-card">
+
+                    <i class="fa-solid fa-calendar-days"></i>
+
+                    <h2>4</h2>
+
+                    <p>Today's Classes</p>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <i class="fa-solid fa-clock"></i>
+
+                    <h2>2</h2>
+
+                    <p>Pending Attendance</p>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <i class="fa-solid fa-users"></i>
+
+                    <h2>120</h2>
+
+                    <p>Total Students</p>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+
+                    <h2>1</h2>
+
+                    <p>Alerts</p>
+
+                </div>
+
+            </section>
+
+            <!-- Today's Schedule -->
+            <section class="schedule-section">
+
+                <div class="section-header">
+
+                    <h2>Today's Schedule</h2>
+
+                </div>
+
+                <div class="schedule-grid">
+
+                    <div class="schedule-card">
+
+                        <h3>Database Management Systems</h3>
+
+                        <p>
+                            <i class="fa-regular fa-clock"></i>
+                            10:00 AM - 11:00 AM
+                        </p>
+
+                        <span>CSE 3A</span>
+
+                    </div>
+
+                    <div class="schedule-card">
+
+                        <h3>Operating Systems</h3>
+
+                        <p>
+                            <i class="fa-regular fa-clock"></i>
+                            11:00 AM - 12:00 PM
+                        </p>
+
+                        <span>CSE 3B</span>
+
+                    </div>
+
+                    <div class="schedule-card">
+
+                        <h3>Computer Networks</h3>
+
+                        <p>
+                            <i class="fa-regular fa-clock"></i>
+                            01:00 PM - 02:00 PM
+                        </p>
+
+                        <span>CSE 3A</span>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <section class="attendance-controls">
+                <div class="control-group">
+                    <label>Subject</label>
+
+                    <select>
+                        <option>Database Management Systems</option>
+                        <option>Operating Systems</option>
+                        <option>Computer Networks</option>
+                    </select>
+                </div>
+
+                <div class="control-group">
+                    <label>Section</label>
+                    <select>
+                        <option>CSE 3A</option>
+                        <option>CSE 3B</option>
+                    </select>
+                </div>
+            </section>
+
+            <section class="attendance-section">
+
+                <div class="section-header">
+
+                    <h2>Mark Attendance</h2>
+
+                </div>
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>Roll No</th>
+
+                                <th>Name</th>
+
+                                <th>Status</th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+
+                                <td>22CSE001</td>
+
+                                <td>Rahul Kumar</td>
+
+                                <td>
+
+                                    <div class="status-buttons">
+
+                                        <button class="present-btn active">
+
+                                            Present
+
+                                        </button>
+
+                                        <button class="absent-btn">
+
+                                            Absent
+
+                                        </button>
+
+                                    </div>
+
+                                </td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>22CSE002</td>
+
+                                <td>Priya Sharma</td>
+
+                                <td>
+
+                                    <div class="status-buttons">
+
+                                        <button class="present-btn active">
+
+                                            Present
+
+                                        </button>
+
+                                        <button class="absent-btn">
+
+                                            Absent
+
+                                        </button>
+
+                                    </div>
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+            <section class="submit-section">
+
+                <button class="submit-btn">
+
+                    <i class="fa-solid fa-floppy-disk"></i>
+
+                    Submit Attendance
+
+                </button>
+
+            </section>
+
+
+
+            <!-- Quick Actions -->
+            <section class="actions-section">
+
+                <div class="section-header">
+
+                    <h2>Quick Actions</h2>
+
+                </div>
+
+                <div class="actions-grid">
+
+                    <button class="action-btn">
+
+                        <i class="fa-solid fa-clipboard-check"></i>
+
+                        Mark Attendance
+
+                    </button>
+
+                    <button class="action-btn">
+
+                        <i class="fa-solid fa-chart-column"></i>
+
+                        Generate Reports
+
+                    </button>
+
+                    <button class="action-btn">
+
+                        <i class="fa-solid fa-book-open"></i>
+
+                        Manage Classes
+
+                    </button>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="../js/teacher-dashboard.js"></script>
+
+</body>
+
+</html>
