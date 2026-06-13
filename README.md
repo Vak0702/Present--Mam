@@ -41,14 +41,29 @@ A modern **Smart Attendance Management System** designed to simplify attendance 
 
 ## 📸 Screenshots
 
-> Add screenshots of the following pages:
+### 🌐 Landing Page
 
-- Landing Page
-- Login Page
-- Student Dashboard
-- Student Attendance Page
-- Teacher Dashboard
-- Teacher Reports Page
+![Landing Page](screenshots/landing-page.png)
+
+### 🔐 Login Page
+
+![Login Page](screenshots/login-page.png)
+
+### 🎓 Student Dashboard
+
+![Student Dashboard](screenshots/student-dashboard.png)
+
+### 📅 Student Attendance
+
+![Student Attendance](screenshots/student-attendance.png)
+
+### 👨‍🏫 Teacher Dashboard
+
+![Teacher Dashboard](screenshots/teacher-dashboard.png)
+
+### 📊 Teacher Reports
+
+![Teacher Reports](screenshots/teacher-report.png)
 
 ## 📂 Project Structure
 
