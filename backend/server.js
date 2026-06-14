@@ -5,6 +5,7 @@ const dotenv = require("dotenv");
 dotenv.config();
 
 const connectDB = require("./config/db");
+const studentRoutes = require("./routes/studentRoutes");
 
 const app = express();
 
@@ -18,6 +19,7 @@ app.get("/", (req, res) => {
     res.send("Present Mam Backend is Running...");
 });
 
+app.use("/api/students", studentRoutes);
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
