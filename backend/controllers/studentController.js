@@ -103,7 +103,12 @@ const loginStudent = async (req, res) => {
     }
 };
 
+const getStudentProfile = async (req, res) => {
+    res.status(200).json(req.student);
+};
+
 module.exports = {
     registerStudent,
     loginStudent,
+    getStudentProfile,
 };
