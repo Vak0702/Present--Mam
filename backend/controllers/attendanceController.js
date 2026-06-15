@@ -42,6 +42,23 @@ const markAttendance = async (req, res) => {
     }
 };
 
+const getMyAttendance = async (req, res) => {
+    try {
+        const attendance = await Attendance.find({
+            student: req.student._id,
+        })
+            .populate("teacher", "name email")
+            .sort({ date: -1 });
+
+        res.status(200).json(attendance);
+    } catch (error) {
+        res.status(500).json({
+            message: error.message,
+        });
+    }
+};
+
 module.exports = {
     markAttendance,
+    getMyAttendance,
 };
