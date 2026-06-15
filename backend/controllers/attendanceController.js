@@ -4,11 +4,12 @@ const markAttendance = async (req, res) => {
     try {
         const {
             student,
-            teacher,
             subject,
             date,
             status,
         } = req.body;
+
+        const teacher = req.teacher._id;
 
         // Prevent duplicate attendance
         const existingAttendance = await Attendance.findOne({
