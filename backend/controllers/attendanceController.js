@@ -58,7 +58,37 @@ const getMyAttendance = async (req, res) => {
     }
 };
 
+const getAttendancePercentage = async (req, res) => {
+    try {
+        const attendanceRecords = await Attendance.find({
+            student: req.student._id,
+        });
+
+        const totalClasses = attendanceRecords.length;
+
+        const presentClasses = attendanceRecords.filter(
+            (record) => record.status === "Present"
+        ).length;
+
+        const attendancePercentage =
+            totalClasses === 0
+                ? 0
+                : ((presentClasses / totalClasses) * 100).toFixed(2);
+
+        res.status(200).json({
+            totalClasses,
+            presentClasses,
+            attendancePercentage: `${attendancePercentage}%`,
+        });
+    } catch (error) {
+        res.status(500).json({
+            message: error.message,
+        });
+    }
+};
+
 module.exports = {
     markAttendance,
     getMyAttendance,
+    getAttendancePercentage,
 };
