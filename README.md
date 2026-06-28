@@ -1,37 +1,66 @@
 # 🎓 Present Mam
 
-A modern **Smart Attendance Management System** designed to simplify attendance tracking for both students and teachers.
+<div align="center">
 
-## ✨ Features
+### Smart Attendance Management System using AI Face Recognition
 
-### 🌐 Landing Page
-- Modern glassmorphic design
-- Responsive layout
-- Smooth scrolling animations
-- Interactive feature showcase
+A modern attendance management platform built for colleges and universities that combines traditional attendance management with AI-powered face recognition.
 
-### 🔐 Authentication
-- Student Login
-- Teacher Login
-- Role-based login toggle
-- Modern UI with custom background
+![GitHub](https://img.shields.io/badge/Status-Active-success)
+![Node.js](https://img.shields.io/badge/Backend-Node.js-green)
+![MongoDB](https://img.shields.io/badge/Database-MongoDB-darkgreen)
+![Express](https://img.shields.io/badge/Framework-Express-black)
 
-### 🎓 Student Portal
-- Dashboard with attendance overview
-- Subject-wise attendance tracking
-- Attendance alerts
-- Animated progress bars and counters
-- Student information section
+</div>
 
-### 👨‍🏫 Teacher Portal
-- Dashboard overview
-- Mark attendance interface
-- Present/Absent toggles
-- Daily schedule section
-- Attendance reports and analytics
-- Export report placeholders
+---
 
-## 🛠️ Technologies Used
+# 📖 About
+
+Present Mam is a Smart Attendance System developed as a B.Tech project.
+
+The system allows teachers to manage attendance digitally while enabling students to monitor their attendance percentage in real time. The project is being extended with AI-based face recognition to automate attendance marking securely.
+
+---
+
+# ✨ Features
+
+## 👨‍🎓 Student
+
+- Secure Login
+- Dashboard
+- Attendance Percentage
+- Subject-wise Attendance
+- Attendance Progress
+- Profile Section
+- Attendance Alerts
+
+---
+
+## 👨‍🏫 Teacher
+
+- Secure Login
+- Dashboard
+- Student Management
+- Mark Attendance
+- Attendance Reports
+- Analytics Dashboard
+
+---
+
+## 🤖 AI Attendance (Work in Progress)
+
+- Face Registration
+- Face Recognition
+- Automatic Attendance
+- Duplicate Prevention
+- AI Service Integration
+
+---
+
+# 🛠 Tech Stack
+
+## Frontend
 
 - HTML5
 - CSS3
@@ -39,63 +68,151 @@ A modern **Smart Attendance Management System** designed to simplify attendance 
 - Font Awesome
 - Google Fonts
 
-## 📸 Screenshots
+## Backend
 
-### 🌐 Landing Page
+- Node.js
+- Express.js
 
-![Landing Page](screenshots/landing-page.png)
+## Database
 
-### 🔐 Login Page
+- MongoDB Atlas
+- Mongoose
 
-![Login Page](screenshots/login-page.png)
+## Authentication
 
-### 🎓 Student Dashboard
+- JWT
+- bcrypt
 
-![Student Dashboard](screenshots/student-dashboard.png)
+## AI
 
-### 📅 Student Attendance
-
-![Student Attendance](screenshots/student-attendance.png)
-
-### 👨‍🏫 Teacher Dashboard
-
-![Teacher Dashboard](screenshots/teacher-dashboard.png)
-
-### 📊 Teacher Reports
-
-![Teacher Reports](screenshots/teacher-report.png)
-
-## 📂 Project Structure
-
-```text
-frontend/
-├── assets/
-│   └── images/
-├── css/
-├── js/
-├── pages/
-├── README.md
-└── screenshots/
-```
-
-## 🚀 Future Enhancements
-
-- Backend Integration (Node.js + Express)
-- MongoDB Database
-- JWT Authentication
-- Real Attendance Storage
-- CSV/PDF Export
-- Face Recognition Attendance
-- Email Notifications
-
-## 👨‍💻 Author
-
-**Virat Kataria**
-
-B.Tech CSE Student
+- Python
+- Face Recognition
+- OpenCV
+- NumPy
 
 ---
 
-⭐ If you found this project interesting, consider giving it a star!
+# 📂 Project Structure
 
-updates are underway 💯
+```
+Present Mam
+│
+├── frontend/
+│   ├── assets/
+│   ├── css/
+│   ├── js/
+│   └── pages/
+│
+├── backend/
+│   ├── config/
+│   ├── controllers/
+│   ├── middleware/
+│   ├── models/
+│   ├── routes/
+│   └── services/
+│
+├── ai-service/
+│   ├── api/
+│   ├── dataset/
+│   ├── encodings/
+│   ├── services/
+│   └── utils/
+│
+├── docs/
+└── screenshots/
+```
+
+---
+
+# 📸 Screenshots
+
+## Landing Page
+
+![Landing](screenshots/landing-page.png)
+
+## Login Page
+
+![Login](screenshots/login-page.png)
+
+## Student Dashboard
+
+![Student Dashboard](screenshots/student-dashboard.png)
+
+## Student Attendance
+
+![Attendance](screenshots/student-attendance.png)
+
+## Teacher Dashboard
+
+![Teacher Dashboard](screenshots/teacher-dashboard.png)
+
+## Reports
+
+![Reports](screenshots/teacher-report.png)
+
+---
+
+# 🚀 Installation
+
+## Clone Repository
+
+```bash
+git clone https://github.com/yourusername/Present-Mam.git
+```
+
+## Backend
+
+```bash
+cd backend
+npm install
+npm run dev
+```
+
+## Frontend
+
+Open
+
+```
+frontend/pages/index.html
+```
+
+or use Live Server.
+
+---
+
+# 🔐 Environment Variables
+
+Create a `.env` file inside the backend folder.
+
+```env
+PORT=5000
+
+MONGO_URI=your_mongodb_connection_string
+
+JWT_SECRET=your_secret_key
+```
+
+---
+
+# 🚧 Future Improvements
+
+- AI Face Recognition Attendance
+- QR Attendance Backup
+- CSV Export
+- PDF Reports
+- Email Notifications
+- Admin Dashboard
+- Mobile Application
+- Cloud Deployment
+
+---
+
+# 👨‍💻 Author
+
+**Virat Kataria**
+
+B.Tech Computer Science Engineering Student
+
+---
+
+If you like this project, consider giving it a ⭐ on GitHub.
