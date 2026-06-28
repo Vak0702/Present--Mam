@@ -19,6 +19,12 @@ const protectTeacher = async (req, res, next) => {
             req.teacher = await Teacher.findById(decoded.id)
                 .select("-password");
 
+            if (!req.teacher) {
+                return res.status(401).json({
+                    message: "Not authorized, teacher not found",
+                });
+            }
+
             next();
         } catch (error) {
             return res.status(401).json({

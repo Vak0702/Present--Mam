@@ -4,6 +4,18 @@ const menuToggle =
 const sidebar =
     document.getElementById("sidebar");
 
+const getAuthToken = () =>
+    localStorage.getItem("token") ||
+    sessionStorage.getItem("token");
+
+const clearSession = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("role");
+    sessionStorage.removeItem("token");
+    sessionStorage.removeItem("role");
+};
+const API_BASE_URL = window.PRESENT_MAM_API_BASE_URL;
+
 
 menuToggle.addEventListener("click", () => {
 
@@ -15,8 +27,7 @@ document.addEventListener(
     "DOMContentLoaded",
     async () => {
 
-        const token =
-            localStorage.getItem("token");
+        const token = getAuthToken();
 
         if (!token) {
 
@@ -31,7 +42,7 @@ document.addEventListener(
             // Fetch student profile
             const profileResponse =
                 await fetch(
-                    "http://localhost:5000/api/students/profile",
+                    `${API_BASE_URL}/api/students/profile`,
                     {
                         headers: {
                             Authorization:
@@ -77,7 +88,7 @@ document.addEventListener(
             // Fetch percentage
             const percentageResponse =
                 await fetch(
-                    "http://localhost:5000/api/attendance/percentage",
+                    `${API_BASE_URL}/api/attendance/percentage`,
                     {
                         headers: {
                             Authorization:
@@ -102,7 +113,7 @@ document.addEventListener(
                 "Session expired. Please login again."
             );
 
-            localStorage.clear();
+            clearSession();
 
             window.location.href =
                 "login.html";
@@ -146,4 +157,25 @@ counters.forEach(counter => {
 
     updateCounter();
 
+});
+
+const logoutBtn =
+    document.getElementById("logoutBtn");
+
+logoutBtn.addEventListener("click", (e) => {
+
+    e.preventDefault();
+
+    const confirmLogout =
+        confirm(
+            "Are you sure you want to logout?"
+        );
+
+    if (confirmLogout) {
+
+        clearSession();
+
+        window.location.href =
+            "login.html";
+    }
 });

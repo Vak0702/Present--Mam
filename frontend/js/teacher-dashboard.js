@@ -4,6 +4,18 @@ const menuToggle =
 const sidebar =
     document.getElementById("sidebar");
 
+const getAuthToken = () =>
+    localStorage.getItem("token") ||
+    sessionStorage.getItem("token");
+
+const clearSession = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("role");
+    sessionStorage.removeItem("token");
+    sessionStorage.removeItem("role");
+};
+const API_BASE_URL = window.PRESENT_MAM_API_BASE_URL;
+
 menuToggle.addEventListener("click", () => {
 
     sidebar.classList.toggle("collapsed");
@@ -14,8 +26,7 @@ document.addEventListener(
     "DOMContentLoaded",
     async () => {
 
-        const token =
-            localStorage.getItem("token");
+        const token = getAuthToken();
 
         if (!token) {
 
@@ -29,7 +40,13 @@ document.addEventListener(
 
             const response =
                 await fetch(
-                    "http://localhost:5000/api/students"
+                    `${API_BASE_URL}/api/students`,
+                    {
+                        headers: {
+                            Authorization:
+                                `Bearer ${token}`,
+                        },
+                    }
                 );
 
             const students =
@@ -127,10 +144,7 @@ submitBtn.addEventListener(
     "click",
     async () => {
 
-        const token =
-            localStorage.getItem(
-                "token"
-            );
+        const token = getAuthToken();
 
         const subject =
             document.getElementById(
@@ -158,7 +172,7 @@ submitBtn.addEventListener(
                     activeButton.dataset.status;
 
                 const response = await fetch(
-                    "http://localhost:5000/api/attendance/mark",
+                    `${API_BASE_URL}/api/attendance/mark`,
                     {
                         method: "POST",
 
@@ -211,3 +225,24 @@ submitBtn.addEventListener(
         }
     }
 );
+
+const logoutBtn =
+    document.getElementById("logoutBtn");
+
+logoutBtn.addEventListener("click", (e) => {
+
+    e.preventDefault();
+
+    const confirmLogout =
+        confirm(
+            "Are you sure you want to logout?"
+        );
+
+    if (confirmLogout) {
+
+        clearSession();
+
+        window.location.href =
+            "login.html";
+    }
+});

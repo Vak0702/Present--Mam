@@ -22,6 +22,12 @@ const protect = async (req, res, next) => {
             // Attach student to request
             req.student = await Student.findById(decoded.id).select("-password");
 
+            if (!req.student) {
+                return res.status(401).json({
+                    message: "Not authorized, student not found",
+                });
+            }
+
             next();
         } catch (error) {
             return res.status(401).json({

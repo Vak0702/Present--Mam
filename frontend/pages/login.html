@@ -7,6 +7,7 @@
     <title>Present Mam - Login</title>
 
     <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/theme.css">
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
@@ -76,11 +77,21 @@
 
             <div class="login-card">
 
-                <h2>Welcome Back 👋</h2>
+                <h2>Welcome Back</h2>
 
                 <p class="login-text">
                     Login to your account
                 </p>
+
+                <div class="auth-switch" aria-label="Authentication mode">
+                    <button type="button" class="auth-toggle active" id="loginModeBtn">
+                        Login
+                    </button>
+
+                    <button type="button" class="auth-toggle" id="signupModeBtn">
+                        Sign Up
+                    </button>
+                </div>
 
                 <div class="role-selector">
                     <div class="slider"></div>
@@ -97,6 +108,31 @@
 
                 <form id="loginForm">
 
+                    <div class="input-group signup-field">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" id="name" placeholder="Enter your full name">
+                    </div>
+
+                    <div class="input-group signup-field student-field">
+                        <i class="fa-solid fa-hashtag"></i>
+                        <input type="text" id="rollNumber" placeholder="Enter your roll number">
+                    </div>
+
+                    <div class="input-group signup-field">
+                        <i class="fa-solid fa-building-columns"></i>
+                        <input type="text" id="department" placeholder="Enter your department">
+                    </div>
+
+                    <div class="input-group signup-field student-field">
+                        <i class="fa-solid fa-layer-group"></i>
+                        <input type="number" id="semester" placeholder="Enter your semester" min="1" max="12">
+                    </div>
+
+                    <div class="input-group signup-field teacher-field">
+                        <i class="fa-solid fa-book-open"></i>
+                        <input type="text" id="subjects" placeholder="Subjects, separated by commas">
+                    </div>
+
                     <div class="input-group">
                         <i class="fa-solid fa-id-card" id="identifierIcon"></i>
                         <input type="email" id="identifier" placeholder="Enter your email" required>
@@ -104,17 +140,19 @@
 
                     <div class="input-group">
                         <i class="fa-solid fa-lock"></i>
-                        <input type="password" id="password" placeholder="Enter your password">
+                        <input type="password" id="password" placeholder="Enter your password" required>
                     </div>
 
                     <div class="options">
 
                         <label>
-                            <input type="checkbox">
+                            <input type="checkbox" id="rememberMe">
                             Remember Me
                         </label>
 
-                        <a href="#">Forgot Password?</a>
+                        <button type="button" class="forgot-link" id="forgotPasswordBtn">
+                            Forgot Password?
+                        </button>
 
                     </div>
 
@@ -124,13 +162,64 @@
 
                 </form>
 
+                <p class="auth-helper" id="authHelper">
+                    Don't have an account?
+                    <button type="button" id="helperToggle">Create one</button>
+                </p>
+
             </div>
 
         </div>
 
     </div>
 
+    <div class="reset-modal" id="resetModal" aria-hidden="true">
+        <div class="reset-card">
+            <button type="button" class="reset-close" id="resetCloseBtn" aria-label="Close reset form">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
 
+            <h2>Reset Password</h2>
+
+            <p>
+                Enter your registered email, verify the OTP, and choose a new password.
+            </p>
+
+            <form id="resetForm">
+                <div class="input-group">
+                    <i class="fa-solid fa-envelope"></i>
+                    <input type="email" id="resetEmail" placeholder="Enter registered email" required>
+                </div>
+
+                <button type="button" class="otp-btn" id="sendOtpBtn">
+                    Send OTP
+                </button>
+
+                <p class="otp-status" id="otpStatus" aria-live="polite"></p>
+
+                <div class="input-group">
+                    <i class="fa-solid fa-key"></i>
+                    <input type="text" id="resetOtp" placeholder="Enter 6-digit OTP" inputmode="numeric" maxlength="6" required>
+                </div>
+
+                <div class="input-group">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" id="resetPassword" placeholder="Enter new password" required>
+                </div>
+
+                <div class="input-group">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <input type="password" id="resetConfirmPassword" placeholder="Confirm new password" required>
+                </div>
+
+                <button type="submit" class="login-btn">
+                    Update Password
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script src="../js/config.js"></script>
     <script src="../js/login.js"></script>
 </body>
 

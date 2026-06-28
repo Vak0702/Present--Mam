@@ -10,12 +10,12 @@
     <title>Present Mam - Attendance</title>
 
     <link rel="stylesheet" href="../css/attendance.css">
+    <link rel="stylesheet" href="../css/theme.css">
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
 
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 </head>
 
@@ -28,9 +28,7 @@
 
             <div class="sidebar-header">
 
-                <img src="../assets/images/logo.png"
-                    alt="Present Mam Logo"
-                    class="logo">
+                <img src="../assets/images/logo.png" alt="Present Mam Logo" class="logo">
 
                 <h2>Present Mam</h2>
 
@@ -54,15 +52,8 @@
 
                 </a>
 
-                <a href="#" class="menu-item">
 
-                    <i class="fa-solid fa-book"></i>
-
-                    <span>Subjects</span>
-
-                </a>
-
-                <a href="#" class="menu-item">
+                <a href="student-reports.html" class="menu-item">
 
                     <i class="fa-solid fa-chart-line"></i>
 
@@ -82,7 +73,7 @@
 
             <div class="sidebar-footer">
 
-                <a href="#" class="menu-item logout">
+                <a href="#" class="menu-item logout" id="logoutBtn">
 
                     <i class="fa-solid fa-right-from-bracket"></i>
 
@@ -129,7 +120,7 @@
             <!-- Page Header -->
             <section class="page-header">
 
-                <h1>Attendance Overview 📅</h1>
+                <h1>Attendance Overview</h1>
 
                 <p>
                     Track your attendance across all subjects.
@@ -140,7 +131,7 @@
             <!-- Overall Attendance Card -->
             <section class="overall-attendance-card">
 
-                <h2>85%</h2>
+                <h2 id="overallAttendance">0%</h2>
 
                 <p>Overall Attendance</p>
 
@@ -183,7 +174,7 @@
 
                         </thead>
 
-                        <tbody>
+                        <tbody id="attendanceTableBody">
 
                             <tr>
 
@@ -274,6 +265,7 @@
 
     </div>
 
+    <script src="../js/config.js"></script>
     <script src="../js/attendance.js"></script>
 
 </body>

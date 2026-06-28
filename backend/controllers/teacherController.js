@@ -1,6 +1,10 @@
 const Teacher = require("../models/teacher");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const {
+    requestPasswordResetOtp,
+    resetPasswordWithOtp,
+} = require("../services/passwordResetService");
 const registerTeacher = async (req, res) => {
     try {
         const {
@@ -103,7 +107,43 @@ const loginTeacher = async (req, res) => {
     }
 };
 
+const requestTeacherPasswordOtp = async (req, res) => {
+    try {
+        const result = await requestPasswordResetOtp({
+            email: req.body.email,
+            role: "teacher",
+            UserModel: Teacher,
+        });
+
+        res.status(result.status).json(result.body);
+    } catch (error) {
+        res.status(500).json({
+            message: error.message,
+        });
+    }
+};
+
+const resetTeacherPassword = async (req, res) => {
+    try {
+        const result = await resetPasswordWithOtp({
+            email: req.body.email,
+            otp: req.body.otp,
+            password: req.body.password,
+            role: "teacher",
+            UserModel: Teacher,
+        });
+
+        res.status(result.status).json(result.body);
+    } catch (error) {
+        res.status(500).json({
+            message: error.message,
+        });
+    }
+};
+
 module.exports = {
     registerTeacher,
     loginTeacher,
+    requestTeacherPasswordOtp,
+    resetTeacherPassword,
 };

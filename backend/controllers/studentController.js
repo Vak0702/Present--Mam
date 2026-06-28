@@ -1,6 +1,10 @@
 const Student = require("../models/student");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const {
+    requestPasswordResetOtp,
+    resetPasswordWithOtp,
+} = require("../services/passwordResetService");
 
 const registerStudent = async (req, res) => {
     try {
@@ -103,6 +107,40 @@ const loginStudent = async (req, res) => {
     }
 };
 
+const requestStudentPasswordOtp = async (req, res) => {
+    try {
+        const result = await requestPasswordResetOtp({
+            email: req.body.email,
+            role: "student",
+            UserModel: Student,
+        });
+
+        res.status(result.status).json(result.body);
+    } catch (error) {
+        res.status(500).json({
+            message: error.message,
+        });
+    }
+};
+
+const resetStudentPassword = async (req, res) => {
+    try {
+        const result = await resetPasswordWithOtp({
+            email: req.body.email,
+            otp: req.body.otp,
+            password: req.body.password,
+            role: "student",
+            UserModel: Student,
+        });
+
+        res.status(result.status).json(result.body);
+    } catch (error) {
+        res.status(500).json({
+            message: error.message,
+        });
+    }
+};
+
 const getStudentProfile = async (req, res) => {
     res.status(200).json(req.student);
 };
@@ -123,9 +161,59 @@ const getAllStudents = async (req, res) => {
     }
 };
 
+const updateStudentProfile = async (req, res) => {
+    try {
+        const { name } = req.body;
+
+        const student = await Student.findById(
+            req.student._id
+        );
+
+        if (!student) {
+
+            return res.status(404).json({
+                message: "Student not found",
+            });
+
+        }
+
+        student.name =
+            name || student.name;
+
+        await student.save();
+
+        res.status(200).json({
+            message:
+                "Profile updated successfully",
+
+            student: {
+                id: student._id,
+                name: student.name,
+                email: student.email,
+                rollNumber:
+                    student.rollNumber,
+                department:
+                    student.department,
+                semester:
+                    student.semester,
+            },
+        });
+
+    } catch (error) {
+
+        res.status(500).json({
+            message: error.message,
+        });
+
+    }
+};
+
 module.exports = {
     registerStudent,
     loginStudent,
+    requestStudentPasswordOtp,
+    resetStudentPassword,
     getStudentProfile,
     getAllStudents,
+    updateStudentProfile,
 };

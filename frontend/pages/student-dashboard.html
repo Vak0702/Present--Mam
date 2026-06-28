@@ -10,6 +10,7 @@
     <title>Present Mam - Student Dashboard</title>
 
     <link rel="stylesheet" href="../css/student-dashboard.css">
+    <link rel="stylesheet" href="../css/theme.css">
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
@@ -43,7 +44,7 @@
 
                 </a>
 
-                <a href="#" class="menu-item">
+                <a href="attendance.html" class="menu-item">
 
                     <i class="fa-solid fa-calendar-check"></i>
 
@@ -51,15 +52,8 @@
 
                 </a>
 
-                <a href="#" class="menu-item">
 
-                    <i class="fa-solid fa-book"></i>
-
-                    <span>Subjects</span>
-
-                </a>
-
-                <a href="#" class="menu-item">
+                <a href="student-reports.html" class="menu-item">
 
                     <i class="fa-solid fa-chart-line"></i>
 
@@ -79,7 +73,7 @@
 
             <div class="sidebar-footer">
 
-                <a href="#" class="menu-item logout">
+                <a href="#" class="menu-item logout" id="logoutBtn">
 
                     <i class="fa-solid fa-right-from-bracket"></i>
 
@@ -133,8 +127,6 @@
                 <h1>
                     Welcome back,
                     <span id="welcomeName">Student</span>
-                    👋
-
                 </h1>
 
                 <p>
@@ -167,16 +159,16 @@
 
                         <p>
 
-                            <strong>Branch:</strong> 
+                            <strong>Branch:</strong>
                             <span id="department">-</span>
-                            
+
 
                         </p>
 
                         <p>
 
                             <strong>Semester:</strong>
-                            <span id="semester">-</span> 
+                            <span id="semester">-</span>
 
 
                         </p>
@@ -324,6 +316,7 @@
 
     </div>
 
+    <script src="../js/config.js"></script>
     <script src="../js/student-dashboard.js"></script>
 
 </body>
